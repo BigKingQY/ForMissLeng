@@ -17,32 +17,22 @@
             <span class="days-label">天</span>
         </div>
         <div class="seconds">15 hours 24 minutes 30 seconds</div>
-        <div onclick="showAlert('做我女朋友好么？', '今天是情人节', '好，答应了', '我再想想', function() {
-
-            showAlert('答应了可就不许赖皮了，从今以后你就是我的人了😏', '表白成功', '确定', '好的', funSuccess(), funCancel());
-        }, function() {
-            window.alert('表白失败');
-        })">点我</div>
 </div>
 
 
-<div class="heart" onclick="myAlert('做我女朋友好么？')"></div>
+<div class="heart" onclick="myAlert('今天是情人节，做我女朋友好么？给你花花🌹🌹🌹')"></div>
 
 <script src="js/index.js"></script>
 <script src="js/love.js"></script>
 <script>
     var c = 0;
-    var s = ["答应了", "答应了", "答应了"];
-    var b = ["我再想想", "我还想想", "继续想想"];
-    var a = ["真的不再考虑一下了？", "真的", "对话框"];
+    var a = ["我就知道你会点取消😕😕😕", "真的不再考虑一下了？", "走过路过千万不要错过"];
     function myAlert(msg) {
         var txt;
-
         if (confirm(msg)) {
-            txt = s[c];
-            alert("表白成功")
+
+            alert("好了，从今天起，你就是我的人了😁😁😁️\n\n\n 疫情结束后，咱们约会吧😏😏😏");
         } else {
-            txt = b[c];
             c++;
             myAlert(a[c-1]);
         }
@@ -69,94 +59,6 @@
         return result;
     };
 </script>
-
-<script>
-    var funSuccess = function () {}
-    var funCancel = function(){}
-
-    function success() {
-        alert("成功")
-        $('#myModal').hidden;
-    }
-
-    function cancel() {
-        alert("失败")
-        $('#myModal').hidden;
-    }
-
-    function clickOK() {
-        funSuccess();
-    }
-    function clickCancel() {
-        funCancel();
-    }
-    function showAlert(content, title, btnSuccessText, btnCancelText, success, cancel) {
-        if(!title)
-            title = '提示';
-        if(!content) {
-            content = '您确定要删除吗?';
-        }
-        if(!btnSuccessText) {
-            btnSuccessText = "确定";
-        }
-        if(!btnCancelText) {
-            btnCancelText = "取消";
-        }
-        if(success) {
-            funSuccess = success;
-        }
-        if(cancel) {
-            funCancel = cancel;
-        }
-
-        var modalHtml = '<!-- Modal -->\
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" \aria-labelledby="myModalLabel" data-backdrop="static">\
-        <div class="modal-dialog" role="document">\
-        <div class="modal-content">\
-        <div class="modal-header">\
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\
-    <h4 class="modal-title" id="myModalLabel">'+title+'</h4>\
-        </div>\
-        <div class="modal-body">'+content+'</div>\
-    <div class="modal-footer">\
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="clickCancel('+cancel+');">'+btnCancelText+'</button>\
-        <button type="button" class="btn btn-primary" onclick="clickOK();" data-dismiss="modal">'+btnSuccessText+'</button>\
-        </div>\
-        </div>\
-        </div>\
-        </div>';
-        $('body').append(modalHtml);
-        $('#myModal').modal();
-    }
-</script>
-
-<!--<&lt;!&ndash; 模态框（Modal） &ndash;&gt;-->
-<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <button type="button" class="close" data-dismiss="modal"-->
-<!--                        aria-hidden="true">×-->
-<!--                </button>-->
-<!--                <h4 class="modal-title" id="myModalLabel">-->
-<!--                    今天是情人节-->
-<!--                </h4>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                做我女朋友好么？-->
-<!--            </div>-->
-<!--            <div class="modal-footer">-->
-<!--                <button type="button" class="btn btn-default"-->
-<!--                        data-dismiss="modal">我再想想-->
-<!--                </button>-->
-<!--                <button type="button" class="btn btn-primary">-->
-<!--                    答应了-->
-
-<!--                </button>-->
-<!--            </div>-->
-<!--        </div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
-<!--    </div>&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
-<!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
 
 </body>
 </html>
