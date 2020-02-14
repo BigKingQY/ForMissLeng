@@ -26,7 +26,7 @@
 </div>
 
 
-<div class="heart" data-toggle="modal" data-target="#myModal"></div>
+<div class="heart" onclick="myAlert('做我女朋友好么？')"></div>
 
 <script src="js/index.js"></script>
 <script src="js/love.js"></script>
@@ -40,22 +40,34 @@
 
         if (confirm(msg)) {
             txt = s[c];
+            alert("表白成功")
         } else {
             txt = b[c];
             c++;
             myAlert(a[c-1]);
         }
     }
-    (function(){
-        window.alert = function(name){
-            var iframe = document.createElement("IFRAME");
-            iframe.style.display="none";
-            iframe.setAttribute("src", 'data:text/plain');
-            document.documentElement.appendChild(iframe);
-            window.frames[0].window.alert(name);
-            iframe.parentNode.removeChild(iframe);
-        }
-    })();
+    window.alert = function(name){
+
+        var iframe = document.createElement("IFRAME");
+        iframe.style.display="none";
+        iframe.setAttribute("src", 'data:text/plain,');
+        document.documentElement.appendChild(iframe);
+        window.frames[0].window.alert(name);
+        iframe.parentNode.removeChild(iframe);
+    };
+
+
+    window.confirm = function (message) {
+        var iframe = document.createElement("IFRAME");
+        iframe.style.display = "none";
+        iframe.setAttribute("src", 'data:text/plain,');
+        document.documentElement.appendChild(iframe);
+        var alertFrame = window.frames[0];
+        var result = alertFrame.window.confirm(message);
+        iframe.parentNode.removeChild(iframe);
+        return result;
+    };
 </script>
 
 <script>
