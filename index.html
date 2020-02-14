@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>❤</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="textCon">
+        <div class="words">今天是认识你的第</div>
+        <div class="days">
+            <span class="days-number">1921</span>
+            <span class="days-label">天</span>
+        </div>
+        <div class="seconds">15 hours 24 minutes 30 seconds</div>
+
+</div>
+
+<div class="heart" onclick="myAlert('做我女朋友好么？') "></div>
+<script src="js/index.js"></script>
+<script src="js/love.js"></script>
+<script>
+    var c = 0;
+    var s = ["答应了", "答应了", "答应了"];
+    var b = ["我再想想", "我还想想", "继续想想"];
+    var a = ["真的不再考虑一下了？", "真的", "对话框"];
+    function myAlert(msg) {
+        var txt;
+
+        if (confirm(msg)) {
+            txt = s[c];
+        } else {
+            txt = b[c];
+            c++;
+            myAlert(a[c-1]);
+        }
+    }
+</script>
+</body>
+</html>
